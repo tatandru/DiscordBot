@@ -22,10 +22,10 @@ public class Main {
         DiscordApi api = new DiscordApiBuilder().setToken(TOKEN).login().join();
 
         api.addMessageCreateListener(event -> {
-            if(event.getMessageContent().equals("!abc")){ ;
+            if(event.getMessageContent().equals("!clean10")){ ;
                 event.getChannel().getMessageCache().setCapacity(10);
                api.getCachedMessages().deleteAll();
-               event.getChannel().sendMessage("cleaned last 10");
+               event.getChannel().sendMessage("Executed !clean10");
             }
         });
 
