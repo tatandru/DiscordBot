@@ -43,21 +43,6 @@ public class Main {
                 .build()
                 .login()
                 .block();
-        client.getEventDispatcher().on(ReadyEvent.class)
-                .subscribe(event -> {
-                    final User self = event.getSelf();
-                    System.out.println(String.format(
-                            "Logged in as %s#%s", self.getUsername(), self.getDiscriminator()
-                    ));
-                });
-        client.getEventDispatcher().on(MessageCreateEvent.class)
-                .map(MessageCreateEvent::getMessage)
-                .filter(message -> message.getContent().equals("adevarat"))
-                .flatMap(Message::getChannel)
-                .flatMap(messageChannel -> messageChannel.createMessage("adv"))
-                .subscribe();
-        client.onDisconnect().block();
-
     }
 
 }
