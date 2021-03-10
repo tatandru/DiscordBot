@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import discord4j.common.util.Snowflake;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
@@ -17,19 +18,26 @@ import org.reactivestreams.Publisher;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 import java.util.function.Consumer;
 
 
 public class Main {
 
-    private final static String TOKEN = "ODE3NDYzNDA2MzA2MjYzMDcy.YEJ4Hw.9O6cBFliL-lDid5FiyPDoUVkc04";
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws FileNotFoundException {
+        File file = new File("src/token.txt");
+        Scanner scanner =new Scanner(file);
+        final String TOKEN = scanner.nextLine();
 
         GatewayDiscordClient client = DiscordClientBuilder.create(TOKEN)
                 .build()
