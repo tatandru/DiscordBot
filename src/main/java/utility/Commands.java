@@ -9,7 +9,6 @@ import java.io.File;
 import java.util.concurrent.CompletableFuture;
 
 public class Commands {
-    private String trigger;
 
     public static void wolframCommand(String trigger, TextChannel channel, String wolframApiKey) {
 
