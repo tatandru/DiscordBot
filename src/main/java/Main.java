@@ -45,8 +45,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-
+        System.out.println(TOKEN);
         initDB();
         MongoCollection<Curse> cursesCollection = db.getCollection("curses", Curse.class);
         Curse curse = cursesCollection.find().first();
