@@ -38,9 +38,9 @@ public class Main {
         }
     }
 
-    static String TOKEN = System.getenv("TOKEN");
-    static final String wolframApiKey = System.getenv("wolframApiKey");
-    static final String dbURI = System.getenv("dbURI");
+    static String TOKEN = scanner.nextLine();
+    static final String wolframApiKey = scanner.nextLine();
+    static final String dbURI = scanner.nextLine();
     static MongoDatabase db;
 
 
