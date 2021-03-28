@@ -27,17 +27,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public class Main {
 
-    static File file = new File("src/token.txt");
-    static Scanner scanner;
-
-    static {
-        try {
-            scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
+    
     static String TOKEN = System.getenv("TOKEN");
     static final String wolframApiKey = System.getenv("wolframApiKey");
     static final String dbURI = System.getenv("dbURI");
