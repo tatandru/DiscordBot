@@ -1,1 +1,1 @@
--web: java -jar build/libs/DiscordBot-1.0-SNAPSHOT.jar
+-web: java -jar out/artifacts/DiscordBot_jar/DiscordBot.jar
