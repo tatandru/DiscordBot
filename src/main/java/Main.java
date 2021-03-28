@@ -42,7 +42,7 @@ public class Main {
     static final String wolframApiKey = System.getenv().get("wolframApiKey");
     static final String dbURI = System.getenv().get("dbURI");
     static MongoDatabase db;
-
+//asdasd
 
     public static void main(String[] args) {
         initDB();
