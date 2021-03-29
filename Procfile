@@ -1,0 +1,1 @@
+-web: java -jar out/artifacts/DiscordBot_jar/DiscordBot.jar
