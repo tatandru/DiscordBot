@@ -9,11 +9,25 @@ repositories {
     mavenCentral()
 
 }
+task stage(dependsOn: ['build', 'clean'])
 
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'org.javacord:javacord:3.1.2'
+    compile 'org.mongodb:mongodb-driver-sync:4.2.2'
+    compile 'org.mongodb:mongodb-driver-legacy:4.2.2'
+    implementation 'com.oracle.database.jdbc:ojdbc8:19.6.0.0'
+    implementation 'com.oracle.database.jdbc:ucp:19.6.0.0'
 
+}
+jar {
+    manifest {
+        attributes "Main-Class": "Main"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
