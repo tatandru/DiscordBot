@@ -10,16 +10,8 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.channel.TextChannel;
-import org.javacord.api.entity.message.Message;
-import org.javacord.api.entity.message.embed.EmbedBuilder;
-import org.javacord.api.entity.user.User;
 import utility.Commands;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
@@ -27,7 +19,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public class Main {
 
-    
+
     static String TOKEN = System.getenv("TOKEN");
     static final String wolframApiKey = System.getenv("wolframApiKey");
     static final String dbURI = System.getenv("dbURI");
