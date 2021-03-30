@@ -9,7 +9,7 @@ import utility.Commands;
 public class Main {
 
 
-    static String TOKEN = System.getenv("TOKEN");
+    static final String TOKEN = System.getenv("TOKEN");
 
 
     public static void main(String[] args) {
