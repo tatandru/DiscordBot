@@ -13,7 +13,7 @@ public class WolframAlphaSimpleApi {
 
     public static File apiRequest(String apiKey, String query) {
         File imageResponse = new File("response.jpg");
-        int responseCode = 0;
+        int responseCode;
         query = query.replaceAll(" ", "+");
         try {
             URL url = new URL("http://api.wolframalpha.com/v1/simple?appid=" + apiKey + "&i=" + query);

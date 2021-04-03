@@ -1,7 +1,8 @@
 package utility.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ratings {
     @JsonProperty("Source")
     private String source;
