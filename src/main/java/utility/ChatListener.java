@@ -3,6 +3,7 @@ package utility;
 import database.MyMongo;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.entity.channel.TextChannel;
+import utility.pojo.Movie;
 
 public class ChatListener {
     static final String wolframApiKey = System.getenv("wolframApiKey");
@@ -25,6 +26,10 @@ public class ChatListener {
             if (trigger.startsWith("!injura ")) {
                 Commands.curseCommand(trigger, channel, mongo.curse, event);
                 System.out.println("from local");
+            }
+            if(trigger.startsWith("!asd")){
+                Movie movie=OpenMovieDatabaseApi.requestByID("tt2494376");
+                channel.sendMessage(movie.getTitle());
             }
 
         });
