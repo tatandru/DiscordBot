@@ -13,6 +13,7 @@ public class OpenMovieDatabaseApi {
 
 
     public static SearchedShow requestBySearch(String title, String apikey) {
+        title=title.trim();
         title = title.replaceAll(" ", "+");
         try {
             URL url = new URL("http://www.omdbapi.com/?" + "apikey=" + apikey + "&s=" + title + "&r=json&page=1");
@@ -31,6 +32,7 @@ public class OpenMovieDatabaseApi {
 
 
     public static Shows requestByID(String id, String apikey) {
+        id=id.trim();
         id = id.replaceAll(" ", "+");
         try {
             URL url = new URL("http://www.omdbapi.com/?" + "apikey=" + apikey + "&t=" + id + "&r=json&page=1");
