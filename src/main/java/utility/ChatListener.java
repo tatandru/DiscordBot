@@ -8,9 +8,10 @@ import utility.pojo.Shows;
 
 public class ChatListener {
     static final String wolframApiKey = System.getenv("wolframApiKey");
+    static final String omdbApiKey=System.getenv("omdb");
 
     public static void discordCommands(DiscordApi api, MyMongo mongo) {
-        api.updateActivity("Use !girthicel for commands");
+        api.updateActivity("!girthicel for commands");
 
         api.addMessageCreateListener(event -> {
             TextChannel channel = event.getChannel();
@@ -27,11 +28,8 @@ public class ChatListener {
             if (trigger.startsWith("!injura ")) {
                 Commands.curseCommand(trigger, channel, mongo.curse, event);
             }
-            if(trigger.startsWith("!asd")){
-                Shows shows =OpenMovieDatabaseApi.requestByIDMovie("tt2193021");
-                channel.sendMessage(shows.getTitle());
-                SearchedShow searchedShow= OpenMovieDatabaseApi.requestBySearch("kong");
-                channel.sendMessage(searchedShow.getShows().get(1).getTitle());
+            if(trigger.startsWith("!movie")){
+                Commands.movieCommand(trigger,channel,omdbApiKey);
             }
 
         });

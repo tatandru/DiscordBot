@@ -36,6 +36,8 @@ public class Shows {
     private String imdbID;
     @JsonProperty("Type")
     private String type;
+    @JsonProperty("Response")
+    private String response;
 
 
     public String getTitle() {
@@ -158,4 +160,11 @@ public class Shows {
         this.type = type;
     }
 
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
 }
